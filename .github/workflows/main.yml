@@ -13,11 +13,11 @@ jobs:
         uses: actions/checkout@v1
 
       - name: configure AWS Credintials
-        uses: aws-actions/configure-aws-credintials@v1
+        uses: aws-actions/configure-aws-credentials@v1
         with:
             aws-access-key-id: ${{ secrets.ACCESS_KEY }}
             aws-secret-access-key: ${{ secrets.SECRET_KEY }}
             aws-region: us-east-1
 
       - name: Deploy static site to s3 bucket
-        run: aws s3 sync . s3://githubaction-practice --delete  
+        run: aws s3 sync . s3://githubaction-practice --delete
